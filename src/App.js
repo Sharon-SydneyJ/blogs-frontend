@@ -1,8 +1,8 @@
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './Components/Navbar';
+import Navbar from './components/Navbar';
 import irlogo from './irlogo.png';
-import Home from './Components/Home';
+import Home from './components/Home';
 
 import './App.css';
 
