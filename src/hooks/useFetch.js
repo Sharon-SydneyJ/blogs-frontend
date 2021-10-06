@@ -23,7 +23,7 @@ const useFetch = (url) => {
           console.error('There is a problem with your fetch request. Please try again', error);
 
           setIsPending(false);
-          setError(err.message);
+          setError(error.message);
       })
     
       }, 1000);
