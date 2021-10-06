@@ -1,10 +1,25 @@
 import React from 'react';
 
+
 function Home() {
+
+    
+    
+   
+
+  
+
+
     return (
-        <div>
-           <p>Welcome to The IndigoRoom</p>  
+        <div className="home-container">
+        <h1 className="home-header">Welcome to The Indigo Room Blogs</h1>
+        
+        
         </div>
+
+
+    
+        
     );
 }
 
