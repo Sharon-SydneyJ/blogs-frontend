@@ -7,8 +7,9 @@ function Navbar() {
         <nav className="navbar d-flex justify-content-center fw-bolder">
             <div className="links">
                 <Link to="/">Home</Link><br/>
-                {/* <Link to="/UserContainer">Bloggers</Link><br/>
-                <Link to="/BlogpostContainer">Blogs</Link><br/> */}
+                <Link to="/users">Users</Link><br/>
+                <Link to="/blogposts">Blogs</Link><br/>
+                
                 
             </div>
         </nav>
