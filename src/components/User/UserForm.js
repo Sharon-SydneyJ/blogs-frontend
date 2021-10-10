@@ -28,42 +28,42 @@ function UserForm({createUser}) {
             
             <form onSubmit={ handleSubmit } className="user-form">
   
-  <label className='form-label'>First Name</label>
-  <input type="text"
-  placeholder='Type First Name Here'
-  required 
-  value={ first_name }
-  onChange={(e) => setFirstName(e.target.value)} />
+                <label className='form-label'>First Name</label>
+                <input type="text"
+                placeholder='Type First Name Here'
+                required 
+                value={ first_name }
+                onChange={(e) => setFirstName(e.target.value)} />
 
 
-  <label className="form-label">Last Name</label>
-  <input type="text"
-  placeholder='Type Last Name Here' 
-  value={ last_name }
-  onChange={(e) => setLastName(e.target.value)} />
+                <label className="form-label">Last Name</label>
+                <input type="text"
+                placeholder='Type Last Name Here' 
+                value={ last_name }
+                onChange={(e) => setLastName(e.target.value)} />
 
- <label className="form-label">User Name</label>
-  <input type="text"
-  placeholder='Create a User Name' 
-  value={ user_name }
-  onChange={(e) => setUserName(e.target.value)} />
+                <label className="form-label">User Name</label>
+                <input type="text"
+                placeholder='Create a User Name' 
+                value={ user_name }
+                onChange={(e) => setUserName(e.target.value)} />
 
- <label className="form-label">Email Address</label>
-  <input type="text"
-  placeholder='Type your email address' 
-  value={ email }
-  onChange={(e) => setEmail(e.target.value)} />
+                <label className="form-label">Email Address</label>
+                <input type="text"
+                placeholder='Type your email address' 
+                value={ email }
+                onChange={(e) => setEmail(e.target.value)} />
 
 
-<button>Submit</button>
-<br />
-<br />
-<br />
-<p>First Name: { first_name }</p>
-<p>Last Name: { last_name }</p>
-<p>User Name; { user_name }</p>
-<p>Email Address: { email }</p>
-</form>
+                        <button>Submit</button>
+                        <br />
+                        <br />
+                        <br />
+                        <p>First Name: { first_name }</p>
+                        <p>Last Name: { last_name }</p>
+                        <p>User Name; { user_name }</p>
+                        <p>Email Address: { email }</p>
+            </form>
            
         </div>
     );
