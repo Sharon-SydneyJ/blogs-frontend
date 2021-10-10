@@ -85,7 +85,8 @@ function deleteUser(user) {
         <h2 className="users-header">Bloggers</h2>
         <h2>Create Your Account Below</h2>
             
-            <p>Become a Blogger or Blog reader by creating your account below. You don't have to blog to register. You can read blogs, post a blog or comment on one.</p>
+        <p>You don't have to blog to register. You can read blogs, post a blog or comment on one.</p>
+        <p>Once your user account is created your email address and last name will no longer be visible and will only be visible on your user profile.</p> 
         <div className="userForm">
 
         <UserForm createUser={createUser} />
