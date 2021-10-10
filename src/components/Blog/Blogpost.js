@@ -56,11 +56,14 @@ return(
         <>
           <button onClick={() => deleteBlogpost(blogpost)}>Delete</button>
 
-          <form onSubmit={handleUpdate}>
+        <form onSubmit={handleUpdate}>
+          <label className='form-label'>Blog Title:</label>
             <input name="title" value={newBlogpost.title} onChange={handleChange} />
+          <label className='form-label'>Blog Content:</label>
             <input name="content" value={newBlogpost.content} onChange={handleChange} />
+          <label className='form-label'>Blog Image:</label>
             <input name="img_url" value={newBlogpost.img_url} onChange={handleChange} />
-            <input name="user_name" value={newBlogpost.img_url} onChange={handleChange} />
+          
     
             <button type="submit">Update</button>
           </form>
