@@ -7,8 +7,8 @@ import UserContainer from './components/User/UserContainer';
 import UserDetails from './components/User/UserDetails';
 import BlogpostContainer from './components/Blog/BlogpostContainer';
 import BlogpostDetails from './components/Blog/BlogpostDetails';
-
 import './App.css';
+
 
 
 function App() {
