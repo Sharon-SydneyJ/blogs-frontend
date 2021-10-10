@@ -5,7 +5,7 @@ import { BASE_URL } from "../../constraints/index.js";
 
 
 export default function BlogpostDetails() {
-    const [blogpost, setBlogpost] = useState(null);
+    const [blogpost, setBlogpost] = useState("");
   
     const { id } = useParams();
   
@@ -36,4 +36,3 @@ export default function BlogpostDetails() {
     );
 
 }
-
