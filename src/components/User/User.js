@@ -49,17 +49,21 @@ return(
         <p>User Name: {user.user_name}</p>
       </Link>
       <p>First Name: {user.first_name}</p>
-      <p>Last Name: Hidden from public view </p>
       <p>User Name: {user.user_name}</p>
-      <p>Email: Hidden from public view </p>
+      <p>Last Name: Hidden </p>
+      <p>Email: Hidden </p>
       {editMode && (
         <>
           <button onClick={() => deleteUser(user)}>Delete</button>
 
           <form onSubmit={handleUpdate}>
+          
             <input name="first_name" value={newUser.first_name} onChange={handleChange} />
+          
             <input name="last_name" value={newUser.last_name} onChange={handleChange} />
+          
             <input name="user_name" value={newUser.user_name} onChange={handleChange} />
+          
             <input name="email" value={newUser.email} onChange={handleChange} />
             <button type="submit">Update</button>
           </form>
