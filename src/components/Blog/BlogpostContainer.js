@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import {BASE_URL} from  "../../constraints/index.js";
 import Blogpost from './Blogpost'
-import BlogpostForm from './BlogpostForm.js';
+
 
 
 
@@ -35,21 +35,7 @@ function BlogpostContainer() {
       ));
     }
   
-    // CREATE
-  
-    function createBlogpost(blogpost) {
-      fetch(BASE_URL + "blogposts", {
-        method: "POST",
-        body: JSON.stringify(blogpost),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => res.json())
-        .then((json) => setBlogposts([...blogposts, json]));
-  
-    }
+    
   
     //  UPDATE
          
@@ -87,10 +73,7 @@ function BlogpostContainer() {
         
          <p>Read some of our Bloggers thoughts or Post your own!</p>
         
-          <div className="blogpostForm">
-  
-          <BlogpostForm createUser={createBlogpost} />
-          </div>
+         
           <div className="blogpost-container">{blogposts && populateBlogposts()}</div>
           
         </div>
