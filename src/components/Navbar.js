@@ -10,6 +10,8 @@ function Navbar() {
                 <Link to="/users">BLOGGERS</Link><br/>
                 <Link to="/blogposts">BLOGS</Link><br/>
                 
+
+                
                 
             </div>
         </nav>
