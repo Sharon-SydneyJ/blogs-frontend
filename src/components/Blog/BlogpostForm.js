@@ -13,7 +13,7 @@ function BlogpostForm({ createBlogpost }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         createBlogpost(formData)
-        setFormData({tite: "", content:"", img_url:""})
+        setFormData({title: "", content: "", img_url: ""})
         
         
     }
