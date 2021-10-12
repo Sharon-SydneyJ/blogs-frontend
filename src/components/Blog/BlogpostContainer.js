@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import {BASE_URL} from  "../../constraints/index.js";
 import Blogpost from './Blogpost'
 
@@ -7,26 +8,35 @@ import Blogpost from './Blogpost'
 
 
 function BlogpostContainer() {
+    
     const [blogposts, setBlogposts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const {id} = useParams
 
 
-    // READ
+    // READ BLOGPOST
   
     useEffect(() => {
-      fetch(BASE_URL + "blogposts")
+      setTimeout(() => {
+      fetch(`${BASE_URL}blogposts`)
         .then(res => {
             if (!res.ok) {
-                throw Error('could not fetch blogposts');
+                throw Error('could not fetch comments');
             }
             return res.json();
           })
         .then(json => {
             setBlogposts(json);
+            setIsLoading(false);
+            setError(null);
         })
         .catch(error => {
-            console.error('Danger Will Robinson there is a prolem with your fetch request', error);
+            console.log('Danger Will Robinson there is a prolem with your fetch request', error);
         })
-    }, []);
+      }, 1000);
+    }, [id]);
   
     function populateBlogposts() {
       console.log(blogposts);
@@ -37,7 +47,7 @@ function BlogpostContainer() {
   
     
   
-    //  UPDATE
+    //  UPDATE BLOGPOST
          
     function updateBlogpost(blogpost) {
       fetch(BASE_URL + "blogposts/" + blogpost.id, {
@@ -58,7 +68,8 @@ function BlogpostContainer() {
   });
   setBlogposts(newBlogposts);
   }
-  
+  // DELETE BLOGPOST
+
   function deleteBlogpost(blogpost) {
     fetch(BASE_URL + "blogposts/" + blogpost.id, {
       method: "DELETE",
@@ -69,6 +80,8 @@ function BlogpostContainer() {
       
       return (
           <div>
+             { error && <div>{ error }</div> }
+     { isLoading && <div>LOADING...</div> }
           <h2 className="blogposts-header">Blogs</h2>
         
          <p>Read some of our Bloggers thoughts or Post your own!</p>
