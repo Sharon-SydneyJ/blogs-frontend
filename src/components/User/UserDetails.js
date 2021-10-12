@@ -10,6 +10,8 @@ export default function UserDetails() {
     const [user, setUser] = useState("");
   
     const { id } = useParams();
+
+    //  SHOW USERS
   
     useEffect(() => {
       fetch(BASE_URL + 'users/' + id)
@@ -26,6 +28,8 @@ export default function UserDetails() {
           ...blogpostDetails,
           user_id: id,
         };
+
+        // POST BLOGPOST
     
         fetch(BASE_URL + `users/${id}/blogposts`, {
           method: "POST",
@@ -34,10 +38,13 @@ export default function UserDetails() {
         })
           .then((res) => res.json())
           .then((json) => {
-            const newUser = { ...user.id, blogpost: [...user.blogposts, json] };
+            const newUser = { ...user, blogpost: [...user.blogposts, json] };
             setUser(newUser);
           });
       }
+
+
+
     
   
     return (
@@ -46,8 +53,6 @@ export default function UserDetails() {
           <>
             <p>First Name: {user.first_name}</p>
             <p>User Name: {user.user_name}</p>
-            
-            <h3>Blogs</h3>
             
             <div className="card-container  ">
              
