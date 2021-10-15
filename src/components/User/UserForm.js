@@ -1,4 +1,4 @@
-// import { useHistory } from "react-router-dom";
+
 import { useState } from "react";
 
 
@@ -6,63 +6,50 @@ import { useState } from "react";
 
 function UserForm({createUser}) {
 
-    const [first_name, setFirstName] = useState("");
-    const [last_name, setLastName] = useState("");
-    const [user_name, setUserName] = useState("");
-    const [email, setEmail] = useState("");
-    const user = {first_name, last_name, user_name, email};
+    const [formData, setFormData] = useState({first_name: "", last_name: "", user_name: "", email: ""});
+    
 
-  
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        createUser(user)
+    function handleChange(e) {
+        formData[e.target.name] = e.target.value
+        setFormData({...formData})
+    }
 
+    function handleSubmit(e) {
+        e.preventDefault()
+        alert('Your user information was submitted Successfully')
+        createUser(formData)
+        setFormData({first_name: "", last_name: "", user_name: "", email: ""})
+    }
+    
 
    
 
-    }
-
 
     return (
-        <div>
+        <div className="userForm-container">
+
+
+
+<form className="userForm">
+            <label>First Name: </label>
+            <input onChange={handleChange} name="first_name" value={formData.first_name}/>
+            <label>Last Name: </label>
+            <input onChange={handleChange} name="last_name" value={formData.last_name}/>
+            <label>User Name: </label>
+            <input onChange={handleChange} name="user_name" value={formData.user_name}/>
+            <label>Email: </label>
+            <input onChange={handleChange} name="email" value={formData.email}/>
+            <button className="button" onClick={handleSubmit}>Submit</button>
             
-            <form onSubmit={ handleSubmit } className="user-form">
-  
-                <label className='form-label'>First Name</label>
-                <input type="text"
-                placeholder='Type First Name Here'
-                required 
-                value={ first_name }
-                onChange={(e) => setFirstName(e.target.value)} />
-
-
-                <label className="form-label">Last Name</label>
-                <input type="text"
-                placeholder='Type Last Name Here' 
-                value={ last_name }
-                onChange={(e) => setLastName(e.target.value)} />
-
-                <label className="form-label">User Name</label>
-                <input type="text"
-                placeholder='Create a User Name' 
-                value={ user_name }
-                onChange={(e) => setUserName(e.target.value)} />
-
-                <label className="form-label">Email Address</label>
-                <input type="text"
-                placeholder='Type your email address' 
-                value={ email }
-                onChange={(e) => setEmail(e.target.value)} />
-
-
-                        <button>Submit</button>
                         <br />
                         <br />
                         <br />
-                        <p>First Name: { first_name }</p>
-                        <p>Last Name: { last_name }</p>
-                        <p>User Name; { user_name }</p>
-                        <p>Email Address: { email }</p>
+                        <div className="userForm-Details">
+                        <p>First Name: { formData.first_name }</p>
+                        <p>Last Name: { formData.last_name }</p>
+                        <p>User Name; { formData.user_name }</p>
+                        <p>Email Address: { formData.email }</p>
+                        </div>
             </form>
            
         </div>
