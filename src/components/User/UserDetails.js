@@ -42,7 +42,7 @@ export default function UserDetails() {
           .then((json) => {
             const newUser = { ...user, blogpost: [...user.blogposts, json] };
             setUser(newUser);
-            alert('Your Blogpost was successfully submitted to our database! Please click Blogs link below to view your new posted Blog!')
+            
           });
       }
 
