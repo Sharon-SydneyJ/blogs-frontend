@@ -12,7 +12,7 @@ function UserContainer() {
   // READ
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL} users`)
+    fetch(BASE_URL + "users")
       .then(res => {
           if (!res.ok) {
               throw Error('could not fetch users');
