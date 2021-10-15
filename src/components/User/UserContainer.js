@@ -77,6 +77,7 @@ function deleteUser(user) {
         </div>
         <div className="user-container">
           {users && populateUsers()}
+          
           </div>
         
       </div>
