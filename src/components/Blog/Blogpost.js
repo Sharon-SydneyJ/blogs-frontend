@@ -32,6 +32,7 @@ function Blogpost({blogpost, updateBlogpost, deleteBlogpost, initialDelay=0}) {
     
     function handleUpdate(e) {
        e.preventDefault();
+       alert('Congratulations! Your blogpost was Successfully updated in our database! Click your Blog Title to view updates after clicking OK!')
        updateBlogpost(newBlogpost);
        setEditMode(false);
     }
@@ -48,7 +49,7 @@ return(
 
     <div className="blogpost-card">
      
-      <Link to={`/blogposts/${blogpost.id}`}>
+      <Link to={`/blogposts/${blogpost.id}`} style={{color: 'grey'}}>
       <p>Title: {blogpost.title}</p>
       </Link>
         <p>Blogger: {blogpost.user.user_name}</p>
@@ -58,11 +59,17 @@ return(
 
         <form onSubmit={handleUpdate}>
           <label className='form-label'>Blog Title:</label>
-            <input name="title" value={newBlogpost.title} onChange={handleChange} />
+            <textarea type="text" rows="3" cols="100" name="title" 
+            value={newBlogpost.title} onChange={handleChange} />
+            <br/>
+            <br/>
           <label className='form-label'>Blog Content:</label>
-            <input name="content" value={newBlogpost.content} onChange={handleChange} />
+            <textarea type="text" rows="25" cols="100" name="content" 
+            value={newBlogpost.content} onChange={handleChange} />
+            <br/>
+            <br/>
           <label className='form-label'>Blog Image:</label>
-            <input name="img_url" value={newBlogpost.img_url} onChange={handleChange} />
+            <textarea type="text" rows="3" cols="100" name="img_url" value={newBlogpost.img_url} onChange={handleChange} />
           
     
             <button type="submit">Update</button>
@@ -71,6 +78,7 @@ return(
       )}
       <button onClick={toggleEdit}>Edit</button>
     </div>
+    <hr/>
     </div>
   );
       }
