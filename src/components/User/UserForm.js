@@ -35,10 +35,12 @@ function UserForm({createUser}) {
             <input onChange={handleChange} name="first_name" value={formData.first_name}/>
             <label>Last Name: </label>
             <input onChange={handleChange} name="last_name" value={formData.last_name}/>
+            <br/>
             <label>User Name: </label>
             <input onChange={handleChange} name="user_name" value={formData.user_name}/>
             <label>Email: </label>
-            <input onChange={handleChange} name="email" value={formData.email}/>
+            <input cols="15" onChange={handleChange} name="email" value={formData.email}/>
+            <br/>
             <button className="button" onClick={handleSubmit}>Submit</button>
             
                         <br />
