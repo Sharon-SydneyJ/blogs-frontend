@@ -64,6 +64,7 @@ function deleteUser(user) {
   });
   const newUsers = users.filter((nuser) => nuser.id !== user.id);
   setUsers(newUsers);
+  alert('Your user information was Successfully deleted from our database! Thank you for visiting The Indigo Room Blogs!')
 }
     
     return (
