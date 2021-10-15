@@ -33,6 +33,7 @@ function User({user, updateUser, deleteUser, initialDelay=0}) {
     function handleUpdate(e) {
        e.preventDefault();
        updateUser(newUser);
+       alert('Your update was submitted Successfully')
        setEditMode(false);
     }
     if (!render) {
@@ -52,11 +53,13 @@ return(
       <p>User Name: {user.user_name}</p>
       <p>Last Name: Hidden </p>
       <p>Email: Hidden </p>
+
+      <div className="userForm-container">
       {editMode && (
         <>
-          <button onClick={() => deleteUser(user)}>Delete</button>
+          <button className="button" onClick={() => deleteUser(user)}>Delete</button>
 
-          <form onSubmit={handleUpdate}>
+          <form className="userForm" onSubmit={handleUpdate}>
           
             <input name="first_name" value={newUser.first_name} onChange={handleChange} />
           
@@ -65,11 +68,13 @@ return(
             <input name="user_name" value={newUser.user_name} onChange={handleChange} />
           
             <input name="email" value={newUser.email} onChange={handleChange} />
-            <button type="submit">Update</button>
+            <button className="button" type="submit">Update</button>
           </form>
         </>
       )}
-      <button onClick={toggleEdit}>Edit</button>
+      <button className="button" onClick={toggleEdit}>Edit</button>
+    </div>
+    <hr/>
     </div>
     </div>
   );
