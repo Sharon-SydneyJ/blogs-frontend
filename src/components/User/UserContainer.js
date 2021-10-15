@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import {BASE_URL} from  "../../constraints/index.js";
 import User from './User';
-import UserForm from './UserForm';
+
 
 function UserContainer() {
     
@@ -29,26 +29,12 @@ function UserContainer() {
 
   function populateUsers() {
     console.log(users);
-    return users.map((user, idx) => (
+    return users.map((user, id) => (
       <User user={user} updateUser={updateUser} deleteUser={deleteUser} key={user.id} />
     ));
   }
 
-  // CREATE
-
-  function createUser(user) {
-    fetch(BASE_URL + "users", {
-      method: "POST",
-      body: JSON.stringify(user),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((json) => setUsers([...users, json]));
-
-  }
+ 
 
   //  UPDATE
        
@@ -81,17 +67,16 @@ function deleteUser(user) {
 }
     
     return (
-        <div>
-        <h2 className="users-header">Bloggers</h2>
-        <h2>Create Your Account Below</h2>
-            
-        <p>You don't have to blog to register. You can read blogs, post a blog or comment on one.</p>
-        <p>Once your user account is created your email address and last name will no longer be visible and will only be visible on your user profile.</p> 
+        <div className="box">
+        <h1 className="header">Bloggers</h1>
+        
         <div className="userForm">
 
-        <UserForm createUser={createUser} />
+    
         </div>
-        <div className="user-container">{users && populateUsers()}</div>
+        <div className="user-container">
+          {users && populateUsers()}
+          </div>
         
       </div>
     );
