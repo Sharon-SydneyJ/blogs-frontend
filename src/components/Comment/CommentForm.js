@@ -12,6 +12,7 @@ function CommentForm({ createComment }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        alert('Congratulations! Your comment was Successfully added to our database! Thank you for')
         createComment(formData)
         setFormData({remark: ""})
         
@@ -23,11 +24,12 @@ function CommentForm({ createComment }) {
     
         <form onSubmit={handleSubmit} className="blogpost-form">
          <label className="form-label">Comment:</label>
-        <input
-          type="text"
+        <textarea
+          type="text" rows="3" cols="100"
           placeholder='Your comment..'
           onChange={handleChange} name="remark" value={formData.remark}
           />
+          <br/>
 
         <button type="submit">Submit</button>
 
