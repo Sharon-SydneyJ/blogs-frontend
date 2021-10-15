@@ -46,7 +46,7 @@ return(
 
     <div className="user-card">
       
-    <Link to={`/users/${user.id}`}>
+    <Link style={{color: 'white'}} to={`/users/${user.id}`}>
         <p>User Name: {user.user_name}</p>
       </Link>
       <p>First Name: {user.first_name}</p>
@@ -60,15 +60,17 @@ return(
           <button className="button" onClick={() => deleteUser(user)}>Delete</button>
 
           <form className="userForm" onSubmit={handleUpdate}>
-          
+           
             <input name="first_name" value={newUser.first_name} onChange={handleChange} />
-          
+            
             <input name="last_name" value={newUser.last_name} onChange={handleChange} />
-          
+            
             <input name="user_name" value={newUser.user_name} onChange={handleChange} />
-          
+            
             <input name="email" value={newUser.email} onChange={handleChange} />
             <button className="button" type="submit">Update</button>
+            
+                        
           </form>
         </>
       )}
