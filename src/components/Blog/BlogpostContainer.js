@@ -67,6 +67,8 @@ function BlogpostContainer() {
       return nb;
   });
   setBlogposts(newBlogposts);
+  
+  
   }
   // DELETE BLOGPOST
 
@@ -76,6 +78,7 @@ function BlogpostContainer() {
     });
     const newBlogposts = blogposts.filter((nb) => nb.id !== blogpost.id);
     setBlogposts(newBlogposts);
+    alert('Your blogpost was Successfully deleted from our database! After clicking OK, create something new & try again!')
   }
       
       return (
