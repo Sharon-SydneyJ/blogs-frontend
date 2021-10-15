@@ -29,18 +29,17 @@ export default function BlogpostDetails() {
         };
 
     // POST COMMENT
-        fetch(BASE_URL + `users/${id}/blogposts/${id}/comments`, {
-          method: "POST",
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(newComment),
-        })
-          .then((res) => res.json())
-          .then((json) => {
-            const newBlogpost = { ...blogpost, comment: [...blogpost.comments, json] };
-            setBlogpost(newBlogpost);
-          });
-      }
-
+    fetch(BASE_URL + `users/${id}/blogposts/${id}/comments`, {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newComment),
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        const newBlogpost = { ...blogpost, comment: [...blogpost.comments, json] };
+        setBlogpost(newBlogpost);
+      });
+  }
     
       
   
@@ -49,7 +48,7 @@ export default function BlogpostDetails() {
         {blogpost && (
         <>
         <p>Blogger: {blogpost.user.user_name}</p>
-        <p> {blogpost.title} </p>
+        <p> Title: {blogpost.title} </p>
         <p>{blogpost.content} </p>
         <p> <img  className="ui medium rounded image" src={blogpost.img_url} alt="" /> </p>
         
