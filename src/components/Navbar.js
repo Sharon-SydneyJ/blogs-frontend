@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../components/Styles/Navbar.css'
 
 function Navbar() {
     return (
         <div className="container-sm">
-        <nav className="navbar d-flex justify-content-center fw-bolder">
+        <nav className="navbar">
             <div className="links">
                 <Link to="/">HOME</Link><br/>
                 <Link to="/users">BLOGGERS</Link><br/>
