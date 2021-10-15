@@ -15,8 +15,8 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <Navbar />
       <header className="App-header">
+      <Navbar />
         <img src={irlogo} className="App-logo" alt="logo" />
         <Switch>
      <Route exact path="/">
