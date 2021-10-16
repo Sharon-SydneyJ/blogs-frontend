@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import '../Styles/Blogpost.css'
 
 
 function Blogpost({blogpost, updateBlogpost, deleteBlogpost, initialDelay=0}) {
@@ -44,10 +45,7 @@ function Blogpost({blogpost, updateBlogpost, deleteBlogpost, initialDelay=0}) {
 return(
 
 
-    <div className="blogpost-container">
-        
-
-    <div className="blogpost-card">
+    <div className="blogpostContainer">
      
       <Link to={`/blogposts/${blogpost.id}`} style={{color: 'grey'}}>
       <p>Title: {blogpost.title}</p>
@@ -78,8 +76,7 @@ return(
       )}
       <button onClick={toggleEdit}>Edit</button>
     </div>
-    <hr/>
-    </div>
+  
   );
       }
       export default Blogpost;

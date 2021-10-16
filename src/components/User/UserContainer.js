@@ -73,7 +73,7 @@ function deleteUser(user) {
         <ul>
         <li>If you are a new Blogger you will find your User Name listed below.</li>
         <li>Click your User Name link to post a new Blog.</li>
-        <li>Click Edit to Update or Delete your posted Blog.</li>
+        <li>Click Edit to Update or Delete your User Information.</li>
         </ul>
         
         <div className="userForm">

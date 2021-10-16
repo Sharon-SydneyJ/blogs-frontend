@@ -82,12 +82,17 @@ function BlogpostContainer() {
   }
       
       return (
-          <div>
-             { error && <div>{ error }</div> }
+          <div className="box">
+    { error && <div>{ error }</div> }
      { isLoading && <div>LOADING...</div> }
           <h2 className="blogposts-header">Blogs</h2>
-        
          <p>Read some of our Bloggers thoughts or Post your own!</p>
+          <ul>
+        <li>Scroll our blog titles listed below to find one of interest.</li>
+        <li>Click a Title link to view a Blog.</li>
+        <li>Click Edit to Update or Delete your posted Blog.</li>
+        </ul>
+        
         
          
           <div className="blogpost-container">{blogposts && populateBlogposts()}</div>
