@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../constraints/index.js";
 import CommentForm from "../Comment/CommentForm.js";
+import '../Styles/BlogpostDetails.css'
 
 
 
@@ -44,7 +45,7 @@ export default function BlogpostDetails() {
       
   
     return (
-    <div>
+    <div className="blogpostDetailsContainer">
         {blogpost && (
         <>
         <p>Blogger: {blogpost.user.user_name}</p>
