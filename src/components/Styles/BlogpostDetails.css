@@ -1,7 +1,6 @@
 .blogpostDetailsContainer{
-   
-    margin-top: 0%;
-    flex-direction: column;
+    display: flex;
+     flex-direction: column;
     margin: 30%;
     padding: 3%;
     background-color: rgb(235, 171, 99);
