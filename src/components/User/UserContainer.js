@@ -70,6 +70,11 @@ function deleteUser(user) {
     return (
         <div className="box">
         <h1 className="header">Bloggers</h1>
+        <ul>
+        <li>If you are a new Blogger you will find your User Name listed below.</li>
+        <li>Click your User Name link to post a new Blog.</li>
+        <li>Click Edit to Update or Delete your posted Blog.</li>
+        </ul>
         
         <div className="userForm">
 

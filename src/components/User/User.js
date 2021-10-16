@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import '../Styles/User.css'
 
 
 function User({user, updateUser, deleteUser, initialDelay=0}) {
@@ -42,9 +43,7 @@ function User({user, updateUser, deleteUser, initialDelay=0}) {
     
 
 return(
-  <div className="user-container">
-
-    <div className="user-card">
+  <div className="userContainer">
       
     <Link style={{color: 'white'}} to={`/users/${user.id}`}>
         <p>User Name: {user.user_name}</p>
@@ -76,8 +75,7 @@ return(
       )}
       <button className="button" onClick={toggleEdit}>Edit</button>
     </div>
-    <hr/>
-    </div>
+    
     </div>
   );
 
